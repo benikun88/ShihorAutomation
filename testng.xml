@@ -7,7 +7,7 @@
 	</listeners>
 	<test thread-count="1" name="Test" parallel="classes">
 		<classes>
-				<class name="tests.BaseTest"></class>
+				<class name="tests.test"></class>
 		</classes>
 	</test>
 	<!-- Test -->
