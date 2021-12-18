@@ -1,5 +1,6 @@
 package pageObject;
 
+import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +21,7 @@ public class BasePage {
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
-		wait = new WebDriverWait(driver, 20);
+		wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 	}
 
 
@@ -113,7 +114,7 @@ public class BasePage {
 
 	// Wait for objects elements instead of sleep
 	public void implicitWait(long timeunit) {
-		driver.manage().timeouts().implicitlyWait(timeunit, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 
 	// Wait for objects elements instead of sleep

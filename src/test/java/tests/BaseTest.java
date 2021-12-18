@@ -32,6 +32,7 @@ public class BaseTest {
 		driver.manage().window().maximize();
 		driver.get(Utl.readProperty("url"));
 
+
 	}
 
 	@AfterClass

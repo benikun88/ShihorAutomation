@@ -4,13 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class DestinationPage extends CrossPage{
+public class DestinationsPage extends CrossPage{
     @FindBy(css=".react-autosuggest__input.destinations-header__input")
     WebElement searchBox;
     @FindBy(xpath="//button[contains(text(),'Search')]")
     WebElement searchBtn;
 
-    public DestinationPage(WebDriver driver) {
+    public DestinationsPage(WebDriver driver) {
         super(driver);
     }
     public void search(String destination){
