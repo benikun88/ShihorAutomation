@@ -32,7 +32,14 @@ public class CrossPage extends BasePage {
     List<WebElement> currencyChoice;
     @FindBy(css = ".currency-switcher .nav__dropdown-menu")
     WebElement currencyEl;
-
+    @FindBy(css = ".acsb-hover.active.hover.over")
+    WebElement usernameLabel;
+    @FindBy(css = ".nav__dropdown-menu > a:nth-child(1)")
+    private WebElement userProfileBtn;
+    @FindBy(css = ".nav__dropdown-menu > a:nth-child(2)")
+    private WebElement bookMarksBtn;
+    @FindBy(css = ".nav .nav__dropdown-menu > button")
+    private WebElement logOutBtn;
 
     public CrossPage(WebDriver driver) {
         super(driver);
@@ -89,5 +96,13 @@ public class CrossPage extends BasePage {
             }
 
         }
+    }
+    public ProfilePage goToProfile(){
+        click(userProfileBtn);
+        return new ProfilePage(driver);
+    }
+    public BookmarkPage goToBookmark(){
+        click(bookMarksBtn);
+        return new BookmarkPage(driver);
     }
 }

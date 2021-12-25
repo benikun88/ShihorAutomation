@@ -6,4 +6,8 @@ public class AboutPage extends CrossPage{
     public AboutPage(WebDriver driver) {
         super(driver);
     }
+
+    public String getTitle(){
+        return getTitle();
+    }
 }
