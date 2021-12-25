@@ -40,6 +40,10 @@ public class CrossPage extends BasePage {
     private WebElement bookMarksBtn;
     @FindBy(css = ".nav .nav__dropdown-menu > button")
     private WebElement logOutBtn;
+    @FindBy(css = ".btn-secondary--outlined.btn-small.btn:nth-child(1)")
+    private WebElement cancelLogout;
+    @FindBy(css = ".btn-small.btn:nth-child(2)")
+    private WebElement approveLogoutBtn;
 
     public CrossPage(WebDriver driver) {
         super(driver);
@@ -98,11 +102,23 @@ public class CrossPage extends BasePage {
         }
     }
     public ProfilePage goToProfile(){
+        waitForVisibleOfElement(usernameLabel);
+        hoverMouse(usernameLabel);
         click(userProfileBtn);
         return new ProfilePage(driver);
     }
     public BookmarkPage goToBookmark(){
+        waitForVisibleOfElement(usernameLabel);
+        hoverMouse(usernameLabel);
         click(bookMarksBtn);
         return new BookmarkPage(driver);
     }
+    public void logOut(){
+        waitForVisibleOfElement(usernameLabel);
+        hoverMouse(usernameLabel);
+        click(logOutBtn);
+        click(approveLogoutBtn);
+    }
+
+
 }
