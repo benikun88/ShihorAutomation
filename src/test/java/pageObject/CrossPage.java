@@ -32,7 +32,7 @@ public class CrossPage extends BasePage {
     List<WebElement> currencyChoice;
     @FindBy(css = ".currency-switcher .nav__dropdown-menu")
     WebElement currencyEl;
-    @FindBy(css = ".acsb-hover.active.hover.over")
+    @FindBy(css = ".app-header__row > .nav> .nav__item.nav__item-dropdown")
     WebElement usernameLabel;
     @FindBy(css = ".nav__dropdown-menu > a:nth-child(1)")
     private WebElement userProfileBtn;
@@ -44,6 +44,8 @@ public class CrossPage extends BasePage {
     private WebElement cancelLogout;
     @FindBy(css = ".btn-small.btn:nth-child(2)")
     private WebElement approveLogoutBtn;
+    @FindBy(xpath = "//header/div[1]/div[1]/nav[1]/div[1]/button[1]")
+    private WebElement userName;
 
     public CrossPage(WebDriver driver) {
         super(driver);
@@ -119,6 +121,11 @@ public class CrossPage extends BasePage {
         click(logOutBtn);
         click(approveLogoutBtn);
     }
-
+    public String getLoginName(){
+        return getT(userName);
+    }
+    public String getSiteName(){
+        return driver.getCurrentUrl();
+    }
 
 }
